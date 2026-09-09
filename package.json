@@ -1,0 +1,19 @@
+{
+  "name": "badminton-scoreboard",
+  "version": "1.0.0",
+  "description": "배드민턴 점수판 웹앱",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "dev": "concurrently \"cd server && nodemon index.js\" \"cd client && npm start\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
