@@ -1,0 +1,853 @@
+/* 전체 스타일 */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --light-bg: #ecf0f1;
+  --dark-text: #2c3e50;
+  --border-color: #bdc3c7;
+  --border-radius: 8px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: var(--dark-text);
+}
+
+/* 로딩 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+/* 버튼 스타일 */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-logout {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+/* 로그인 페이지 */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.error-message {
+  background-color: #fadbd8;
+  color: var(--danger-color);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--danger-color);
+}
+
+.toggle-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.toggle-btn:hover {
+  color: #2980b9;
+}
+
+.demo-accounts {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-bg);
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: var(--border-radius);
+}
+
+.demo-accounts h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.demo-accounts p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* 대시보드 */
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.user-info span {
+  font-size: 0.95rem;
+}
+
+/* 탭 */
+.tabs {
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: var(--secondary-color);
+}
+
+.tab-btn.active {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+/* 탭 콘텐츠 */
+.tab-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+}
+
+/* 게임보드 */
+.game-board {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.game-board h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.game-board-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.game-list {
+  background-color: var(--light-bg);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.game-list h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.game-item {
+  background-color: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.game-item:hover {
+  border-color: var(--secondary-color);
+  background-color: #f0f8ff;
+}
+
+.game-item.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.game-item .score {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.game-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-detail h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  background-color: var(--light-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+.team-section,
+.score-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-section h4 {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.player-info {
+  background-color: white;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.player-role {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+.team1-score {
+  color: var(--secondary-color);
+  min-width: 80px;
+  text-align: right;
+}
+
+.team2-score {
+  color: var(--warning-color);
+  min-width: 80px;
+  text-align: left;
+}
+
+.separator {
+  color: #999;
+}
+
+.score-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-control {
+  flex: 1;
+  padding: 8px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-control:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.button-group input {
+  flex: 2;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.referee-section {
+  background-color: #fff3cd;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--warning-color);
+}
+
+.referee-section h4 {
+  margin-bottom: 8px;
+  color: var(--warning-color);
+}
+
+.referee-section span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.status-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-section label {
+  font-weight: 600;
+}
+
+.status-section select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* 스코어보드 */
+.scoreboard {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.scoreboard h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.game-selector {
+  margin-bottom: 30px;
+}
+
+.game-selector h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.game-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.game-btn {
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  background-color: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.game-btn:hover {
+  border-color: var(--secondary-color);
+  background-color: #f0f8ff;
+}
+
+.game-btn.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.game-status {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.scoreboard-detail {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px 20px;
+  border-radius: var(--border-radius);
+  color: white;
+  margin-bottom: 30px;
+}
+
+.scoreboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.scoreboard-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.team {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+}
+
+.team h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.players {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.score-display-large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.score-display-large .score {
+  min-width: 120px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+.scoreboard-footer {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+}
+
+.referee-info {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.referee-info .label {
+  opacity: 0.8;
+}
+
+.all-games-summary {
+  margin-top: 30px;
+}
+
+.all-games-summary h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.game-card {
+  background-color: var(--light-bg);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.card-score {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.card-players {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.team-players {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player-small {
+  background-color: white;
+  padding: 6px;
+  border-radius: 4px;
+  border-left: 3px solid var(--secondary-color);
+  padding-left: 10px;
+}
+
+.vs {
+  text-align: center;
+  color: #999;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .game-board-container {
+    grid-template-columns: 1fr;
+  }
+
+  .game-info {
+    grid-template-columns: 1fr;
+  }
+
+  .scoreboard-main {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .score-display-large {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 25px;
+  }
+
+  .login-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .user-info {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .tabs {
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .tab-content {
+    padding: 15px;
+  }
+
+  .game-board,
+  .scoreboard {
+    padding: 15px;
+  }
+
+  .game-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-display {
+    font-size: 2rem;
+  }
+
+  .score-display-large {
+    font-size: 2rem;
+  }
+
+  .scoreboard-detail {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .login-card h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-header {
+    padding: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .user-info {
+    gap: 10px;
+  }
+
+  .user-info span {
+    font-size: 0.85rem;
+  }
+
+  .btn-logout {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .game-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .game-btn {
+    padding: 12px;
+  }
+
+  .scoreboard-main {
+    gap: 10px;
+  }
+
+  .score-display-large {
+    font-size: 1.5rem;
+    gap: 10px;
+  }
+
+  .score-display-large .score {
+    min-width: 70px;
+    padding: 10px;
+  }
+
+  .game-info {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .button-group {
+    gap: 3px;
+  }
+
+  .btn-control {
+    padding: 6px;
+    font-size: 1rem;
+  }
+
+  .button-group input {
+    font-size: 1rem;
+  }
+}
